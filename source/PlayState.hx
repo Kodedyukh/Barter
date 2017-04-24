@@ -83,7 +83,7 @@ class PlayState extends FlxState
 		label = new FlxSpriteGroup(200, 410);
 		var background = new FlxSprite(0, 0);
 		background.makeGraphic(400, 300, FlxColor.GRAY);
-		var missionString = "You are playing for guy in top left corner, who wears red hat. You have to collect coins and put into your bank account. You collect them by exchanging goods with friends. Make you first exchange with one of your friends (men with blue bars above heads). Control your character with arrows approach them and hit SPACE button. But they accept just things they don’t have, it could be hat, shirt or pants. Initially you can provide them with pants (in your left hand).";
+		var missionString = "You are playing for guy in top left corner, who wears red hat. You have to collect coins and put into your bank account. You collect them by exchanging goods with friends. Make you first exchange with one of your friends (men with blue bars above heads). Control your character with arrows (or WASD), approach them and hit SPACE button. But they accept just things they don’t have, it could be hat, shirt or pants. Initially you can provide them with pants (in your left hand).";
 		missionText = new FlxText(10, 10, 380, missionString, 14);
 		label.add(background);
 		label.add(missionText);
@@ -206,19 +206,19 @@ class PlayState extends FlxState
 	{
 		if (currentGameMode == Walk)
 		{
-			if (FlxG.keys.pressed.RIGHT)
+			if (FlxG.keys.pressed.RIGHT || FlxG.keys.pressed.D)
 			{
 				player.manuallyMove('right');
 			}
-			if (FlxG.keys.pressed.LEFT)
+			if (FlxG.keys.pressed.LEFT || FlxG.keys.pressed.A)
 			{
 				player.manuallyMove('left');
 			}
-			if (FlxG.keys.pressed.UP)
+			if (FlxG.keys.pressed.UP || FlxG.keys.pressed.W)
 			{
 				player.manuallyMove('up');
 			}
-			if (FlxG.keys.pressed.DOWN)
+			if (FlxG.keys.pressed.DOWN|| FlxG.keys.pressed.S)
 			{
 				player.manuallyMove('down');
 			}

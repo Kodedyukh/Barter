@@ -145,6 +145,7 @@ class Dialog extends FlxSpriteGroup
 	
 	private function tradeCallback():Void
 	{
+		player.good.kill();
 		player.giveGood(otherPerson.goodStr);
 		otherPerson.good.kill();
 		otherPerson.goodStr = '';
